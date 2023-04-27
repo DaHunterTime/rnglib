@@ -5,6 +5,7 @@ use crate::algorithm::RandomAlgorithm;
 
 // Implementation for the Mersenne Twister
 // https://en.wikipedia.org/wiki/Mersenne_Twister#Pseudocode
+/// Mersenne Twister algorithm.
 pub struct MersenneTwister {
     state: [u32; 624], // n = 624
     index: u32
@@ -15,6 +16,7 @@ impl MersenneTwister {
     // w = 32 | n = 624        | m = 397 | r = 31         | a = 0x9908B0DF
     // u = 11 | d = 0xFFFFFFFF | s = 7   | b = 0x9D2C5680 |
     // t = 15 | c = 0xEFC60000 | l = 18  | f = 1812433253 |
+    /// The twist operation, part of the algorithm.
     fn twist(&mut self) {
         let lower_mask = 0x7FFFFFFF; // (1 << 31) - 1;
         let upper_mask = 0x80000000;

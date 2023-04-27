@@ -5,6 +5,7 @@ use crate::algorithm::RandomAlgorithm;
 
 // Implementation for linear xor shift algorithms
 // https://en.wikipedia.org/wiki/Xorshift#Example_implementation
+/// Linear 32 bits xor shift algorithm.
 pub struct XORShift32 {
     state: u32
 }
@@ -41,6 +42,7 @@ impl RandomAlgorithm for XORShift32 {
     }
 }
 
+/// Linear 64 bits xor shift algorithm.
 pub struct XORShift64 {
     state: u64
 }
@@ -77,6 +79,7 @@ impl RandomAlgorithm for XORShift64 {
     }
 }
 
+/// Linear 128 bits xor shift algorithm.
 pub struct XORShift128 {
     state: u128
 }
@@ -115,6 +118,7 @@ impl RandomAlgorithm for XORShift128 {
 
 // Implementation for xor shift + algorithm
 // https://en.wikipedia.org/wiki/Xorshift#xorshift+
+/// 128 bits xor shift+ algorithm.
 pub struct XORShift128Plus {
     state: [u64; 2]
 }
